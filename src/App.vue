@@ -2,6 +2,7 @@
 import Accordian from './components/Accordian.vue';
 import FormValidation from './components/FormValidation.vue';
 import PasswordGenerator from './components/PasswordGenerator.vue';
+import ProgressStep from './components/ProgressStep.vue';
 import RandomQuoteGenerator from './components/RandomQuoteGenerator.vue';
 import TodoList from './components/TodoList.vue';
 
@@ -13,7 +14,8 @@ import TodoList from './components/TodoList.vue';
   <!-- <RandomQuoteGenerator /> -->
   <!-- <Accordian /> -->
   <!-- <FormValidation /> -->
-  <PasswordGenerator />
+  <!-- <PasswordGenerator /> -->
+  <ProgressStep />
 </template>
 
 <style scoped>
