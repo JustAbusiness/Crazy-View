@@ -7,6 +7,7 @@ import PasswordGenerator from './components/PasswordGenerator.vue';
 import ProgressStep from './components/ProgressStep.vue';
 import RandomQuoteGenerator from './components/RandomQuoteGenerator.vue';
 import TodoList from './components/TodoList.vue';
+import WikiClone from './components/WikiClone.vue';
 
 
 </script>
@@ -19,7 +20,8 @@ import TodoList from './components/TodoList.vue';
   <!-- <PasswordGenerator /> -->
   <!-- <ProgressStep /> -->
   <!-- <DadJokes /> -->
-  <GithubUserSearch />
+  <!-- <GithubUserSearch /> -->
+  <WikiClone />
 </template>
 
 <style scoped>
