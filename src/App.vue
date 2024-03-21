@@ -1,6 +1,7 @@
 <script setup>
 import Accordian from './components/Accordian.vue';
 import FormValidation from './components/FormValidation.vue';
+import PasswordGenerator from './components/PasswordGenerator.vue';
 import RandomQuoteGenerator from './components/RandomQuoteGenerator.vue';
 import TodoList from './components/TodoList.vue';
 
@@ -11,7 +12,8 @@ import TodoList from './components/TodoList.vue';
   <!-- <TodoList /> -->
   <!-- <RandomQuoteGenerator /> -->
   <!-- <Accordian /> -->
-  <FormValidation />
+  <!-- <FormValidation /> -->
+  <PasswordGenerator />
 </template>
 
 <style scoped>
