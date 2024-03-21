@@ -1,5 +1,6 @@
 <script setup>
 import Accordian from './components/Accordian.vue';
+import DadJokes from './components/DadJokes.vue';
 import FormValidation from './components/FormValidation.vue';
 import PasswordGenerator from './components/PasswordGenerator.vue';
 import ProgressStep from './components/ProgressStep.vue';
@@ -15,7 +16,8 @@ import TodoList from './components/TodoList.vue';
   <!-- <Accordian /> -->
   <!-- <FormValidation /> -->
   <!-- <PasswordGenerator /> -->
-  <ProgressStep />
+  <!-- <ProgressStep /> -->
+  <DadJokes />
 </template>
 
 <style scoped>
