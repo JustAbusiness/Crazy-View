@@ -2,6 +2,7 @@
 import Accordian from './components/Accordian.vue';
 import DadJokes from './components/DadJokes.vue';
 import FormValidation from './components/FormValidation.vue';
+import GithubUserSearch from './components/GithubUserSearch.vue';
 import PasswordGenerator from './components/PasswordGenerator.vue';
 import ProgressStep from './components/ProgressStep.vue';
 import RandomQuoteGenerator from './components/RandomQuoteGenerator.vue';
@@ -17,7 +18,8 @@ import TodoList from './components/TodoList.vue';
   <!-- <FormValidation /> -->
   <!-- <PasswordGenerator /> -->
   <!-- <ProgressStep /> -->
-  <DadJokes />
+  <!-- <DadJokes /> -->
+  <GithubUserSearch />
 </template>
 
 <style scoped>
