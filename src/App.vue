@@ -1,27 +1,53 @@
 <script setup>
-import Accordian from './components/Accordian.vue';
-import DadJokes from './components/DadJokes.vue';
-import FormValidation from './components/FormValidation.vue';
-import GithubUserSearch from './components/GithubUserSearch.vue';
-import PasswordGenerator from './components/PasswordGenerator.vue';
-import ProgressStep from './components/ProgressStep.vue';
-import RandomQuoteGenerator from './components/RandomQuoteGenerator.vue';
-import TodoList from './components/TodoList.vue';
-import WikiClone from './components/WikiClone.vue';
+import Computed from './Computed.vue';
+import Condition from './Condition.vue';
+import Event from './Event.vue';
+import FormInput from './FormInput.vue';
+import List from './List.vue';
+import Ref from './Ref.vue';
+import Style from './Style.vue';
+import TemplateRef from './TemplateRef.vue';
+import Watchers from './Watchers.vue';
 
+const message = "Hello Vue 3!";
+const buttonId = 'button-id2';
+const isButtonDisabled = false;
+const objectOfAttr = {
+  id: 'container',
+  class: 'wapper',
+  style: 'color: red',
+};
+
+
+const number = 0;
+const listString = 'a,b,c,d,e,f,g,h,i,j,k,l,m,n,o';
+const covertToId = (data) => data.split(',').revserse().join('-');
+const attributeName = "href";
+const url = 'https://www.google.com';
 
 </script>
 
 <template>
-  <!-- <TodoList /> -->
-  <!-- <RandomQuoteGenerator /> -->
-  <!-- <Accordian /> -->
-  <!-- <FormValidation /> -->
-  <!-- <PasswordGenerator /> -->
-  <!-- <ProgressStep /> -->
-  <!-- <DadJokes /> -->
-  <!-- <GithubUserSearch /> -->
-  <WikiClone />
+  
+  <h1>Syntax</h1>
+  <span>Messages: {{ message }} </span>
+
+  <button :id="buttonId" :disabled="isButtonDisabled">Click Here</button>
+  <button v-bind="objectOfAttr" :id="listString.split(',').join('-')">Number: {{number}}</button>
+
+  <!-- <button v-bind="objectOfAttr" :id="covertToId(listString)">Number: {{number}}</button> -->
+
+  <!-- <a v-bind:[attributeName]="url"> New URL</a>
+
+  <!-- <Ref /> -->
+  <!-- <Computed /> -->
+  <!-- <Style /> -->
+  <!-- <Condition /> -->
+  <!-- <List /> -->
+  <!-- <Event /> -->
+  <!-- <FormInput /> -->
+  <!-- <Watchers /> -->
+  <!-- <TemplateRef /> -->
 </template>
 
 <style scoped>
