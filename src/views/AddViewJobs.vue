@@ -170,7 +170,59 @@
 </template>
 
 <script setup>
+  import { reactive } from 'vue';
+  import axios from 'axios';
+  import router from '@/router';
+  import { useNotification} from "@kyvg/vue3-notification";
 
+  const notification = useNotification();
+
+  const form = reactive({
+    type: 'Full-Time',
+    title: '',
+    description: '',
+    salary: '',
+    location: '',
+    company : {
+      name: '',
+      description: '',
+      contactEmail: '',
+      contactPhone: '',
+    }   
+  })
+
+
+  const handleSubmit = async () => {
+    const newJob = {
+      title: form.title,
+      type: form.type,
+      description: form.description,
+      salary: form.salary,
+      company: {
+        name: form.company.name,
+        description: form.company.description,
+        contactEmail: form.company.contactEmail,
+        contactPhone: form.company.contactPhone,
+      }
+    }
+    
+    try {
+      const response = await axios.post(`/api/jobs`, newJob);
+      notification.notify({
+         title: "Vue 3 notification 🎉",
+          message: "Job added successfully",
+          type: "success",
+      });
+      router.push(`/jobs/${response.data.id}`)
+    } catch (error) {
+      console.error('Error adding job', error);
+      notification.notify({
+         title: "Vue 3 notification 🎉",
+          message: "Error adding job",
+          type: "error",
+      });
+    }
+  }
 </script>
 
 <style lang="scss" scoped>

@@ -1,6 +1,7 @@
 <template>
   <NavBar />
   <RouterView />
+  <notifications />
 </template>
 
 <script setup>

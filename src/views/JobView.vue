@@ -77,7 +77,53 @@
 </template>
 
 <script setup>
+import PulseLoader from 'vue-spinner/src/PulseLoader.vue';
+import axios from 'axios'
+import { reactive, onMounted } from 'vue';
+import { useRouter, useRoute } from 'vue-router';
+import BackButton from '../components/BackButton.vue';
+import { useNotification} from "@kyvg/vue3-notification";
+import router from '@/router';
 
+const route = useRoute();
+const notification = useNotification();
+const jobId = route.params.id;
+
+const state = reactive({
+    job: {},
+    isLoading: true
+});
+
+
+onMounted(async () => {
+    try {
+        const response = await axios.get(`/api/jobs/${jobId}`);
+        state.job = response.data;
+    } catch (error) {
+        console.error('Error fetching jobs', error);
+    } finally {
+        state.isLoading = false;
+    }
+})
+
+const deleteJob = async () => {
+    try {
+        await axios.delete(`/api/jobs/${jobId}`);
+        notification.notify({
+            title: "Vue 3 notification 🎉",
+            message: "Job deleted successfully",
+            type: "success",
+        });
+        router.push('/jobs');
+    } catch (error) {
+        console.error('Error deleting job', error);
+        notification.notify({
+            title: "Vue 3 notification 🎉",
+            message: "Error deleting job",
+            type: "error",
+        });
+    }
+}
 </script>
 
 <style lang="scss" scoped></style>
