@@ -1,5 +1,12 @@
+
+import router from './router'
 import { createApp } from 'vue'
-// import './style.css'
+import '../src/assets/style.css'
+import 'primeicons/primeicons.css'
 import App from './App.vue'
 
-createApp(App).mount('#app')
+
+
+const app = createApp(App)
+app.use(router)
+app.mount('#app')
